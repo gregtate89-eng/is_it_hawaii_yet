@@ -4,28 +4,42 @@
   <meta charset="UTF-8">
   <title>Is It Hawaii Yet?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #87ceeb, #ffffff);
       text-align: center;
-      padding: 40px;
+      padding: 30px;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     #countdown {
       font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 30px;
     }
 
     .yes {
       color: green;
       font-size: 3rem;
+    }
+
+    .map {
+      max-width: 500px;
+      width: 90%;
+      border-radius: 12px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .surfer {
+      width: 200px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -34,10 +48,21 @@
   <h1>🌺 Is It Hawaii Yet? 🏝️</h1>
   <div id="countdown">Loading...</div>
 
-  <script>
-    // 🔁 CHANGE THIS DATE to your Hawaii trip!
-    const hawaiiDate = new Date("2026-01-23T01:00:00").getTime();
+  <!-- Map of Hawaii -->
+  <img
+    class="map"
+    src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Hawaii_map-en.png"
+    alt="Map of Hawaii">
 
+  <!-- Surfer GIF -->
+  <img
+    class="surfer"
+    src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif"
+    alt="Surfer riding a wave">
+
+  <script>
+    // 🌴 CHANGE THIS DATE TO YOUR TRIP DATE
+    const hawaiiDate = new Date("2026-01-23T08:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
     function updateCountdown() {
@@ -45,7 +70,7 @@
       const distance = hawaiiDate - now;
 
       if (distance <= 0) {
-        countdownEl.innerHTML = "YES! 🌈🌴";
+        countdownEl.innerHTML = "YES! 🌈🌴🏄‍♂️";
         countdownEl.classList.add("yes");
         return;
       }
